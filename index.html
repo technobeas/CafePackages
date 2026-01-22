@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <title>Coffee Shop Website Packages</title>
+
+    <style>
+      :root {
+        --coffee: #6f4e37;
+        --coffee-dark: #4b3224;
+        --card-bg: rgba(255, 255, 255, 0.85);
+        --text-muted: #666;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", "Segoe UI", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(135deg, #f7efe9, #f1e7df);
+        color: #333;
+      }
+
+      .pricing-section {
+        padding: 80px 20px;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 2.6rem;
+        margin-bottom: 12px;
+      }
+
+      .subtitle {
+        color: var(--text-muted);
+        margin-bottom: 60px;
+        font-size: 1.05rem;
+      }
+
+      .pricing-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 35px;
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      .pricing-card {
+        background: var(--card-bg);
+        padding: 35px 30px;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        transition: 0.3s;
+        position: relative;
+      }
+
+      .pricing-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .price {
+        font-size: 1.5rem;
+        color: var(--coffee);
+        font-weight: 600;
+      }
+
+      .badge {
+        display: inline-block;
+        margin: 16px 0 24px;
+        padding: 6px 14px;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        background: #ece6e1;
+      }
+
+      .badge.highlight {
+        background: linear-gradient(135deg, var(--coffee), var(--coffee-dark));
+        color: #fff;
+      }
+
+      ul {
+        text-align: left;
+        margin-bottom: 25px;
+      }
+
+      ul li {
+        list-style: none;
+        padding-left: 24px;
+        margin-bottom: 12px;
+        position: relative;
+        font-size: 0.95rem;
+      }
+
+      ul li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--coffee);
+      }
+
+      .use-case {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        margin-bottom: 25px;
+      }
+
+      button {
+        width: 100%;
+        padding: 14px;
+        border: none;
+        border-radius: 12px;
+        background: linear-gradient(135deg, var(--coffee), var(--coffee-dark));
+        color: #fff;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+
+      .popular {
+        border: 2px solid var(--coffee);
+      }
+
+      .popular::after {
+        content: "MOST CHOSEN";
+        position: absolute;
+        top: -14px;
+        right: 20px;
+        background: linear-gradient(135deg, var(--coffee), var(--coffee-dark));
+        color: #fff;
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 0.7rem;
+      }
+
+      .whatsapp-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        font-weight: 500;
+      }
+
+      .whatsapp-btn:hover {
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .floating-whatsapp {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 16px;
+        background: #25d366;
+        color: #fff;
+        border-radius: 50px;
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+        z-index: 999;
+      }
+
+      .floating-whatsapp:hover {
+        opacity: 0.95;
+      }
+
+      .floating-whatsapp .wa-text {
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="pricing-section">
+      <h1>Coffee Shop Website Packages</h1>
+      <p class="subtitle">
+        Simple, affordable website plans made specially for café owners
+      </p>
+
+      <div class="pricing-container">
+        <!-- Basic -->
+        <div class="pricing-card">
+          <h2>Basic Package</h2>
+          <p class="price">₹4,000 – ₹5,000</p>
+          <span class="badge">Best for New Cafés</span>
+
+          <ul>
+            <li>Simple website for your café</li>
+            <li>Pages: Home, About, Menu & Contact</li>
+            <li>Show your menu and prices</li>
+            <li>Works well on mobile & laptop</li>
+            <li>Clean and modern look</li>
+            <li>Free website hosting</li>
+          </ul>
+
+          <p class="use-case">
+            Good if you just want your café to be visible online.
+          </p>
+
+          <button
+            class="whatsapp-btn"
+            data-package="Basic Package"
+            data-price="₹4,000 – ₹5,000"
+          >
+            Ask on WhatsApp
+          </button>
+        </div>
+
+        <!-- Medium -->
+        <div class="pricing-card popular">
+          <h2>Medium Package</h2>
+          <p class="price">₹10,000 – ₹12,000</p>
+          <span class="badge highlight">Most Popular</span>
+
+          <ul>
+            <li>Everything in Basic Package</li>
+            <li>You can change menu anytime</li>
+            <li>Easy admin panel</li>
+            <li>Add, edit or delete items</li>
+            <li>Mark items popular easily</li>
+            <li>Handle items Availability easily</li>
+            <li>Secure owner login</li>
+          </ul>
+
+          <p class="use-case">
+            Best if you want to update menu yourself anytime.
+          </p>
+
+          <button
+            class="whatsapp-btn"
+            data-package="Medium Package"
+            data-price="₹10,000 – ₹12,000"
+          >
+            Ask on WhatsApp
+          </button>
+        </div>
+
+        <!-- Premium -->
+        <div class="pricing-card">
+          <h2>Premium Package</h2>
+          <p class="price">₹17,000 – ₹20,000</p>
+          <span class="badge">Smart Café</span>
+
+          <ul>
+            <li>Everything in Medium Package</li>
+            <li>Customers order from table</li>
+            <li>QR code on each table</li>
+            <li>No need for waiter to take order</li>
+            <li>Orders come directly to you</li>
+            <li>Saves staff time & cost</li>
+          </ul>
+
+          <p class="use-case">
+            Perfect for cafés that want a modern and smart system.
+          </p>
+
+          <button
+            class="whatsapp-btn"
+            data-package="Premium Package"
+            data-price="₹17,000 – ₹20,000"
+          >
+            Ask on WhatsApp
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <a
+      href="https://wa.me/919130913755"
+      target="_blank"
+      class="floating-whatsapp"
+      aria-label="Chat on WhatsApp"
+    >
+      <svg
+        width="22"
+        height="22"
+        viewBox="0 0 32 32"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M16.01 3C9.38 3 4 8.29 4 14.82c0 2.58.83 4.96 2.25 6.91L4 29l7.43-2.13c1.87 1.01 4.02 1.59 6.58 1.59 6.63 0 12.01-5.29 12.01-11.82C30.02 8.29 22.64 3 16.01 3z"
+        />
+      </svg>
+
+      <span class="wa-text">Ask on WhatsApp</span>
+    </a>
+
+    <script>
+      const phoneNumber = "919130913755";
+
+      document.querySelectorAll("button").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const packageName = btn.getAttribute("data-package");
+          const price = btn.getAttribute("data-price");
+
+          const message = `
+Hello
+I am interested in the *${packageName}*.
+
+Price: ${price}
+
+Please share more details.
+Thank you
+    `;
+
+          const encodedMessage = encodeURIComponent(message.trim());
+          const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+          window.open(whatsappURL, "_blank");
+        });
+      });
+    </script>
+  </body>
+</html>
